@@ -1,0 +1,65 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:System.Numerics"
+    x:Class="HP.MainPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" 
+                Style="{StaticResource SubheaderTextBlockStyle}"
+                       Text="Spell Detector"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="128"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="imageControl" Grid.Row="0" Grid.Column="0" 
+                Stretch="Uniform"/>
+                <Image x:Name="processedImageControl" Grid.Row="0" Grid.Column="2" 
+                Stretch="Uniform"/>
+                <Image x:Name="croppedImageControl" Grid.Row="1" Grid.Column="2" 
+                Stretch="Uniform"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBlock  
+                Style="{StaticResource SubtitleTextBlockStyle}"
+                       Text="Detected: " VerticalAlignment="Center"/>
+                    <TextBlock x:Name="tbDetected"  
+                        Style="{StaticResource SubtitleTextBlockStyle}"
+                       Text="Unknown" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </StackPanel>
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="/Assets/arresto_momentum.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Height="90" Width="90" />
+                    <Rectangle x:Name="spell0Rect" Grid.Column="0" Fill="#000000" Opacity="0.7"/>
+                    <Image Grid.Column="1" Source="/Assets/alohomora.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Height="90" Width="90" />
+                    <Rectangle x:Name="spell1Rect" Grid.Column="1" Fill="#000000" Opacity="0.7"/>
+                    <Image Grid.Column="2" Source="/Assets/locomotor.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Height="90" Width="90" />
+                    <Rectangle x:Name="spell2Rect" Grid.Column="2" Fill="#000000" Opacity="0.7"/>
+                    <Image Grid.Column="3" Source="/Assets/mimblewimble.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Height="90" Width="90" />
+                    <Rectangle x:Name="spell3Rect" Grid.Column="3" Fill="#000000" Opacity="0.7"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
